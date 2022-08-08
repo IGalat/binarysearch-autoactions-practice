@@ -11,15 +11,20 @@ so left -> 1, right -> 2
 
 
 def b_left(arr: list[Any], val: Any) -> int:
-    bi = _bisect(arr, val, lambda a, b: a < b)
-    return bi
+    """
+    [1,  2,  3,  4,  5, 6, 7, 8], 3
+     1   2   3  !<4
+     1   2<
+         return index 2
+    """
+    return _bisect_search(arr, val, lambda a, b: a < b)
 
 
 def b_right(arr: list[Any], val: Any) -> int:
-    return _bisect(arr, val, lambda a, b: a <= b)
+    return _bisect_search(arr, val, lambda a, b: a <= b)
 
 
-def _bisect(
+def _bisect_search(
     arr: list[Any],
     val: Any,
     # python quirk: comparison returns Any, not bool
@@ -32,8 +37,9 @@ def _bisect(
 
     while lo < hi:
         mid = (lo + hi) // 2
+        sub_array = arr[lo:hi]
         if comparison(arr[mid], val):
-            lo = mid
+            lo = mid + 1
         else:
-            hi = mid - 1
+            hi = mid
     return hi
