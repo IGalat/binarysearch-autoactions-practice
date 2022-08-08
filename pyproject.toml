@@ -2,6 +2,27 @@
 requires = ["setuptools>=42.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
+
+[project]
+name = "binarysearch"
+version = "0.1.0"
+description = "autotests and actions on binarysearch example"
+authors = [{ name = "IGalat", email = "author_email@example.com" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/IGalat/binarysearch-autoactions-practice"
+
+
 [tool.pytest.ini_options]
 # additional options: coverage for package binarysearch ?
 addopts = "--cov=binarysearch"
