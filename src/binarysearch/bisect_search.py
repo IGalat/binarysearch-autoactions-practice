@@ -37,7 +37,6 @@ def _bisect_search(
 
     while lo < hi:
         mid = (lo + hi) // 2
-        sub_array = arr[lo:hi]
         if comparison(arr[mid], val):
             lo = mid + 1
         else:
