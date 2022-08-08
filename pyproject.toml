@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "binarysearch"
+name = "binarysearch-igalat"
 version = "0.1.0"
 description = "autotests and actions on binarysearch example"
 authors = [{ name = "IGalat", email = "author_email@example.com" }]
